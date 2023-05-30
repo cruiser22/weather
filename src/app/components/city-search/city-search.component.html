@@ -10,5 +10,13 @@
 <div *ngIf="weatherData" class="mt-4 text-center">
   <h1 class="text-4xl font-bold">{{weatherData.location.name}}</h1>
   <p class="text-2xl">{{weatherData.current.temp_c}}°C</p>
-  <!-- Display more weather info here -->
+  <p class="text-xl">Humidity: {{weatherData.current.humidity}}%</p>
+
+  <ng-container *ngIf="weatherData.forecast">
+    <h2 class="text-3xl font-bold mt-4">7 jours à venir </h2>
+    <div *ngFor="let forecastDay of weatherData.forecast.forecastday" class="mt-2">
+      <h3 class="text-2xl">{{forecastDay.date}}</h3>
+      <p class="text-xl">{{forecastDay.day.avgtemp_c}}°C</p>
+    </div>
+  </ng-container>
 </div>
