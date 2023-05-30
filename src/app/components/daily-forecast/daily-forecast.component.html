@@ -1,0 +1,23 @@
+<div *ngIf="dailyForecast" class="bg-gradient-to-r from-blue-500 to-purple-500 text-white p-6 rounded-lg shadow-md mt-6 overflow-auto h-96">
+  <h2 class="text-3xl font-bold mb-4 text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-red-500">Prévisions par jour</h2>
+  <div class="space-y-4">
+    <div *ngFor="let day of dailyForecast.time; let i = index" class="bg-white bg-opacity-10 p-4 rounded-lg">
+      <p class="text-lg mb-2">
+        <span class="font-semibold text-xl">{{day}}</span>
+      </p>
+      <p class="mb-2">
+        levé du soleil: <span class="font-semibold">{{dailyForecast.sunrise[i]}}</span>
+      </p>
+      <p class="mb-2">
+        couché du soleil: <span class="font-semibold">{{dailyForecast.sunset[i]}}</span>
+      </p>
+      <p>
+        UV Index Max: <span class="font-semibold">{{dailyForecast.uv_index_max[i]}}</span>
+      </p>
+  
+
+
+      <!-- Add more fields as needed -->
+    </div>
+  </div>
+</div>
