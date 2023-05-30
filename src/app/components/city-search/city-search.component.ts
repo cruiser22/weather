@@ -12,7 +12,7 @@ import { catchError } from 'rxjs/operators';
 export class CitySearchComponent {
   city!: string;
   weatherData: any; //
- errorMessage: string = ''; 
+ errorMessage: string = '';
 
   constructor(private weatherService: WeatherService) { }
 
@@ -21,19 +21,20 @@ export class CitySearchComponent {
       this.weatherService.getWeather(this.city).pipe(
         catchError(err => {
           this.handleError(err);
-          return of(null);  // Return a safe value to ensure the app keeps running
+          return of(null);
         })
       ).subscribe(data => {
         if (data) {
           this.weatherData = data;
           console.log(this.weatherData);
+          this.errorMessage = '';  // Clear the error message when we successfully get data
         }
       });
     }
   }
 
   handleError(err: any) {
-    // Handle the error here. Maybe show the user a friendly message.
+    this.errorMessage = 'Choisir une ville.';
     console.error('An error occurred', err);
   }
 }
