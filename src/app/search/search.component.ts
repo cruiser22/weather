@@ -1,16 +1,20 @@
 import { Component, EventEmitter, Output } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
   styleUrls: ['./search.component.css']
 })
-export class SearchComponent {  searchQuery: string = '';
+export class SearchComponent {
+  searchQuery: string = '';
 
-@Output() searchEvent = new EventEmitter<string>();
+  @Output() searchEvent = new EventEmitter<string>();
 
-search() {
-  this.searchEvent.emit(this.searchQuery);
-  this.searchQuery = ''; // Réinitialiser la requête de recherche après l'émission de l'événement
-}
+  constructor(private router: Router) {}
+
+  search() {
+    this.router.navigate(['/city', this.searchQuery]);
+    this.searchQuery = '';
+  }
 }

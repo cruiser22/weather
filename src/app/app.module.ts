@@ -10,6 +10,7 @@ import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
+import { CitySearchComponent } from './components/city-search/city-search.component';
 
 
 @NgModule({
@@ -19,6 +20,7 @@ import { FormsModule } from '@angular/forms';
     HourlyForecastComponent,
     DailyForecastComponent,
     SearchComponent,
+    CitySearchComponent,
 
   ],
   imports: [
@@ -27,7 +29,7 @@ import { FormsModule } from '@angular/forms';
     RouterModule,
     HttpClientModule,
     FormsModule,
-    
+
 
   ],
   providers: [],
