@@ -8,7 +8,6 @@ import { HourlyForecastComponent } from './components/hourly-forecast/hourly-for
 import { DailyForecastComponent } from './components/daily-forecast/daily-forecast.component';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
-import { SearchComponent } from './search/search.component';
 import { FormsModule } from '@angular/forms';
 import { CitySearchComponent } from './components/city-search/city-search.component';
 
@@ -19,7 +18,6 @@ import { CitySearchComponent } from './components/city-search/city-search.compon
     CurrentWeatherComponent,
     HourlyForecastComponent,
     DailyForecastComponent,
-    SearchComponent,
     CitySearchComponent,
 
   ],

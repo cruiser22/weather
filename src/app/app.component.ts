@@ -7,7 +7,7 @@ import { WeatherService } from './services/weather.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-   title = 'Meteo bas lec';
+   title = 'Easy Meteo';
    currentWeather: any;
   searchQuery: string = '';
 
